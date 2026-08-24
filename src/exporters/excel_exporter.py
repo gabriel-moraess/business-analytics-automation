@@ -159,7 +159,6 @@ class ExcelExporter:
         """
 
         if not arquivo_temporario.exists():
-
             return
 
         try:
@@ -169,7 +168,6 @@ class ExcelExporter:
         except PermissionError as erro:
 
             if silencioso:
-
                 return
 
             raise PermissionError(
@@ -335,8 +333,8 @@ class ExcelExporter:
     # FORMATAÇÃO DA ABA
     # =========================================================
 
-    @staticmethod
     def _formatar_aba(
+        self,
         worksheet,
     ) -> None:
         """
@@ -372,9 +370,7 @@ class ExcelExporter:
                 vertical="center",
             )
 
-        worksheet.row_dimensions[
-            1
-        ].height = 25
+        worksheet.row_dimensions[1].height = 25
 
         # -----------------------------------------------------
         # TABELA
@@ -470,15 +466,12 @@ class ExcelExporter:
         for column_cells in worksheet.columns:
 
             if not column_cells:
-
                 continue
 
             max_length = 0
 
-            column_letter = (
-                get_column_letter(
-                    column_cells[0].column
-                )
+            column_letter = get_column_letter(
+                column_cells[0].column
             )
 
             cells_to_check = column_cells[:1000]
@@ -486,7 +479,6 @@ class ExcelExporter:
             for cell in cells_to_check:
 
                 if cell.value is None:
-
                     continue
 
                 tamanho = len(
@@ -494,7 +486,6 @@ class ExcelExporter:
                 )
 
                 if tamanho > max_length:
-
                     max_length = tamanho
 
             largura = min(
@@ -562,8 +553,7 @@ class ExcelExporter:
             # -------------------------------------------------
 
             eh_percentual = (
-                "percentual"
-                in nome_coluna
+                "percentual" in nome_coluna
                 or nome_coluna.endswith("%")
                 or "margem" in nome_coluna
             )
@@ -591,21 +581,15 @@ class ExcelExporter:
 
             if eh_percentual and not eh_monetario:
 
-                formato = (
-                    '0.00%'
-                )
+                formato = "0.00%"
 
             elif eh_monetario:
 
-                formato = (
-                    'R$ #,##0.00'
-                )
+                formato = 'R$ #,##0.00'
 
             elif eh_inteiro:
 
-                formato = (
-                    '#,##0'
-                )
+                formato = '#,##0'
 
             else:
 
