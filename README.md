@@ -1,148 +1,196 @@
-<h1 align="center">Gabriel Moraes</h1>
+# Business Analytics Automation
 
-<p align="center">
-  <strong>Analista de Dados Júnior | Business Intelligence | Power BI | SQL | Python</strong>
-</p>
+Projeto de **Business Analytics e automação de dados desenvolvido em Python**, estruturado para automatizar o processo de coleta, transformação, validação, armazenamento e disponibilização de dados para análise de desempenho e suporte à tomada de decisão.
 
-<p align="center">
-  Pós-graduando em Data Analytics pela FIAP • Bacharel em Administração
-</p>
+## Objetivo
 
----
+Automatizar um fluxo de dados completo, reduzindo atividades manuais de consolidação e preparação de informações para análise.
 
-## Sobre mim
+O projeto foi desenvolvido com arquitetura modular e separação de responsabilidades entre as diferentes etapas do processamento.
 
-Profissional com experiência em **Finanças e Controladoria**, atualmente direcionando minha carreira para **Data Analytics e Business Intelligence**.
+## Fluxo do projeto
 
-Minha experiência profissional me proporcionou forte visão de negócio, trabalhando com **indicadores, orçamento, fluxo de caixa, análise de custos e relatórios gerenciais para suporte à tomada de decisão**.
+```text
+Fonte de Dados
+      ↓
+   Extract
+      ↓
+  Transform
+      ↓
+   Validate
+      ↓
+   Database
+      ↓
+  Analytics
+      ↓
+   Reports
+      ↓
+   Dashboard
+```
 
-Atualmente desenvolvo projetos de **Análise de Dados, Business Intelligence, ETL e automação**, utilizando Python, SQL, Power BI e Excel.
+## Principais etapas
 
-Meu foco é transformar dados em **informações, indicadores e insights que apoiem decisões de negócio**.
+### 1. Extract
 
----
+Extração de dados a partir de fontes externas.
+
+### 2. Transform
+
+Tratamento e transformação dos dados utilizando Pandas, incluindo:
+
+* Normalização
+* Padronização
+* Remoção de duplicidades
+* Criação de metadados
+* Preparação para análise
+
+### 3. Validate
+
+Validação automática da qualidade dos dados antes da persistência.
+
+Entre as verificações estão:
+
+* Colunas obrigatórias
+* Valores nulos
+* Registros duplicados
+* Validação da estrutura dos dados
+
+### 4. Database
+
+Persistência dos dados utilizando **SQLite**.
+
+A arquitetura foi estruturada para permitir evolução futura para outros bancos relacionais.
+
+### 5. Analytics
+
+Camada responsável pelo processamento analítico, criação de métricas, indicadores e geração de insights gerenciais.
+
+### 6. Export
+
+Disponibilização dos dados em diferentes formatos:
+
+* CSV
+* Excel
+* Parquet
+
+### 7. Dashboard
+
+Atualização automatizada de dashboard executivo a partir dos dados processados.
+
+## Arquitetura
+
+O projeto utiliza uma arquitetura modular com separação entre:
+
+```text
+src/
+├── api/
+├── analytics/
+├── database/
+├── etl/
+├── exporters/
+├── integration/
+├── loaders/
+├── pipeline/
+├── reports/
+├── utils/
+├── validation/
+└── warehouse/
+```
+
+Essa organização busca facilitar:
+
+* Manutenção
+* Reutilização
+* Testabilidade
+* Escalabilidade
+* Separação de responsabilidades
+
+## Qualidade e testes
+
+O projeto possui estrutura de testes automatizados para componentes do pipeline, incluindo transformação, validação, carregamento e persistência de dados.
+
+Também são utilizados:
+
+* Logging
+* Tratamento de exceções
+* Validações automáticas
+* Separação modular de responsabilidades
+
+## Modelo analítico
+
+A camada analítica utiliza conceitos de **Business Intelligence e modelagem dimensional**, incluindo:
+
+* Tabela fato
+* Dimensões
+* Métricas
+* KPIs
+* Regras de negócio
+
+## Indicadores
+
+Entre os indicadores trabalhados no projeto estão:
+
+### Financeiros
+
+* Receita
+* Lucro
+* Margem
+* Ticket Médio
+
+### Comerciais
+
+* Pedidos
+* Produtos vendidos
+* Clientes
+* Crescimento
+
+### Operacionais
+
+* Entregas
+* Cancelamentos
+* Tempo de processamento
+* Frete
 
 ## Tecnologias
 
-### Data Analytics
-
 * Python
 * Pandas
 * NumPy
 * SQL
-* Exploratory Data Analysis (EDA)
-
-### Business Intelligence
-
-* Power BI
-* DAX
-* Power Query
-* Data Visualization
-* Dashboards
-* KPIs
-* Business Intelligence
-
-### Dados e Automação
-
-* ETL
-* APIs
 * SQLite
-* Parquet
 * Excel
+* Parquet
+* ETL
 * Git
 * GitHub
 
----
+## Documentação
 
-## Projetos em destaque
+A documentação detalhada da arquitetura está disponível em:
 
-### Business Analytics Automation
+`docs/Business_Analytics_Architecture.md`
 
-Projeto de automação de Business Analytics desenvolvido em Python, envolvendo:
+## Estrutura
 
-**Extração → Transformação → Validação → Persistência → Análise → Exportação → Dashboard**
+```text
+business-analytics-automation/
+│
+├── dashboard/
+├── database/
+├── dados/
+├── docs/
+├── src/
+├── tests/
+├── .gitignore
+├── main.py
+├── README.md
+└── requirements.txt
+```
 
-O projeto implementa uma arquitetura modular com:
+## Objetivo profissional
 
-* Pipeline ETL
-* Integração com fontes de dados
-* Tratamento e transformação com Pandas
-* Validação de qualidade dos dados
-* Persistência em SQLite
-* Modelo analítico
-* Métricas e KPIs
-* Geração de insights
-* Exportação para CSV, Excel e Parquet
-* Atualização automatizada de dashboard
-* Logging
-* Testes automatizados
-* Documentação de arquitetura
+Projeto desenvolvido para demonstrar conhecimentos práticos em:
 
----
+**Data Analytics + Business Intelligence + ETL + Python + Data Quality + Database + Automation**
 
-### Power BI
-
-Portfólio de projetos de Business Intelligence utilizando:
-
-* Power BI
-* DAX
-* Power Query
-* Excel
-* SQL
-* Modelagem de dados
-* Dashboards
-* KPIs
-* Análise de desempenho
-* Visualização de dados
-
----
-
-### Python Data Analytics
-
-Projetos de análise exploratória de dados utilizando:
-
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* NLTK
-* Scikit-learn
-
-Inclui projetos envolvendo análise de e-commerce, análise exploratória, métricas de desempenho e processamento de texto.
-
----
-
-## O que você encontrará neste perfil
-
-📊 Dashboards e projetos de Business Intelligence
-
-🐍 Projetos de análise de dados com Python
-
-🔎 Exploratory Data Analysis (EDA)
-
-🔄 Processos de ETL e transformação de dados
-
-🗄️ Integração e organização de dados
-
-📈 KPIs e indicadores de negócio
-
-⚙️ Automação de processos analíticos
-
-💰 Projetos aplicados a Finanças e Business Analytics
-
----
-
-## Formação
-
-🎓 MBA/Pós-graduação em Data Analytics — FIAP
-
-🎓 Bacharelado em Administração — UNICEP
-
----
-
-## Contato
-
-💼 LinkedIn: https://www.linkedin.com/in/gabriel-moraes-470703128/
-
-📧 Email: [gabriel.moraesss86@gmail.com](mailto:gabriel.moraesss86@gmail.com)
+O projeto busca aproximar conceitos de análise de dados e engenharia de dados de problemas reais de negócio.
